@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mohamed Jeylani — Data & Analytics Engineering Portfolio</title>
+<meta name="description" content="Independent data analytics and analytics-engineering portfolio projects by Mohamed Jeylani. Built on fully synthetic data." />
+<style>
+  :root {
+    --bg: #0f1420;
+    --bg-soft: #161d2e;
+    --card: #1a2233;
+    --card-hover: #202a3f;
+    --border: #2a3550;
+    --text: #e8ecf4;
+    --muted: #9aa6be;
+    --accent: #5b9dff;
+    --accent-soft: rgba(91, 157, 255, 0.14);
+    --green: #47d69a;
+    --chip: #232e46;
+    --maxw: 1040px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: radial-gradient(1200px 600px at 70% -10%, #1b2740 0%, var(--bg) 55%);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    padding: 0 20px 80px;
+  }
+  .wrap { max-width: var(--maxw); margin: 0 auto; }
+
+  /* Header */
+  header { padding: 72px 0 40px; border-bottom: 1px solid var(--border); }
+  .eyebrow { color: var(--accent); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; font-size: 13px; }
+  h1 { font-size: clamp(32px, 5vw, 48px); line-height: 1.1; margin: 12px 0 14px; letter-spacing: -0.02em; }
+  .lede { color: var(--muted); font-size: 18px; max-width: 680px; }
+  .contact { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px; }
+  .contact a {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--accent-soft); color: var(--accent);
+    border: 1px solid var(--border); border-radius: 999px;
+    padding: 8px 16px; text-decoration: none; font-size: 14px; font-weight: 500;
+    transition: background .15s ease, transform .15s ease;
+  }
+  .contact a:hover { background: rgba(91,157,255,.24); transform: translateY(-1px); }
+
+  /* Note banner */
+  .note {
+    margin: 28px 0 4px; padding: 14px 18px; border-radius: 12px;
+    background: var(--bg-soft); border: 1px solid var(--border);
+    color: var(--muted); font-size: 14px;
+  }
+  .note strong { color: var(--text); }
+
+  /* Section */
+  section { padding-top: 48px; }
+  .section-title { font-size: 14px; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin-bottom: 22px; }
+
+  /* Cards */
+  .grid { display: grid; grid-template-columns: 1fr; gap: 22px; }
+  .card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 16px; padding: 28px 28px 26px;
+    transition: transform .18s ease, border-color .18s ease, background .18s ease;
+  }
+  .card:hover { transform: translateY(-3px); border-color: #38466a; background: var(--card-hover); }
+  .card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .card h2 { font-size: 21px; letter-spacing: -0.01em; }
+  .kind { font-size: 12px; font-weight: 600; color: var(--green); background: rgba(71,214,154,.12); border: 1px solid rgba(71,214,154,.25); border-radius: 999px; padding: 4px 11px; white-space: nowrap; }
+  .card p.desc { color: var(--muted); margin: 12px 0 18px; }
+
+  .block { margin-top: 16px; }
+  .block h3 { font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: 8px; }
+  .block p { font-size: 15px; }
+
+  .metrics { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 6px; }
+  .metric { min-width: 120px; }
+  .metric .val { font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.01em; }
+  .metric .lbl { font-size: 12.5px; color: var(--muted); }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+  .chip { font-size: 12.5px; color: var(--muted); background: var(--chip); border: 1px solid var(--border); border-radius: 7px; padding: 4px 10px; }
+
+  .card-foot { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--border); display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .repo-link { display: inline-flex; align-items: center; gap: 8px; color: var(--accent); text-decoration: none; font-weight: 600; font-size: 14.5px; }
+  .repo-link:hover { text-decoration: underline; }
+  .repo-link svg { width: 17px; height: 17px; fill: currentColor; }
+
+  footer { margin-top: 64px; padding-top: 28px; border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  footer a { color: var(--accent); text-decoration: none; }
+
+  @media (min-width: 760px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">Portfolio</div>
+    <h1>Mohamed Jeylani</h1>
+    <p class="lede">Data analytics &amp; analytics engineering — independent projects covering SQL analysis, statistical testing, machine learning, and tested ETL pipelines.</p>
+    <div class="contact">
+      <a href="mailto:tinyjeylani1@gmail.com">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        tinyjeylani1@gmail.com
+      </a>
+      <a href="https://github.com/jeylanimohamed" target="_blank" rel="noopener">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.9 18.3 5.2 18.3 5.2c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+        github.com/jeylanimohamed
+      </a>
+    </div>
+    <div class="note">
+      <strong>A note on the data.</strong> Every project below is built on <strong>fully synthetic data</strong> generated locally with fixed random seeds. No employer, customer, patient, or proprietary data is used. Reported metrics recover relationships intentionally encoded in the generators, so they demonstrate the analytical and engineering methods rather than real-world findings — a deliberate choice to keep the work reproducible and free of confidential data.
+    </div>
+  </header>
+
+  <section>
+    <div class="section-title">Selected projects</div>
+    <div class="grid">
+
+      <!-- Fintech -->
+      <article class="card">
+        <div class="card-head">
+          <h2>Fintech Product Analytics — Churn &amp; A/B Testing</h2>
+          <span class="kind">Analysis &amp; ML</span>
+        </div>
+        <p class="desc">An end-to-end product-analytics workflow: which behavioural signals associate with an inactivity-based churn label, and does a simulated onboarding variant move 30-day transaction activity?</p>
+
+        <div class="block">
+          <h3>Approach</h3>
+          <p>Generated 8,000 users and 60,000 transactions, ran business-style SQL analysis in SQLite, trained a Random Forest churn-label classifier, and ran a simulated A/B test with a Welch t-test, 95% confidence interval, Cohen's <em>d</em>, and a sample-ratio-mismatch check.</p>
+        </div>
+
+        <div class="block">
+          <h3>Key results (synthetic sample)</h3>
+          <div class="metrics">
+            <div class="metric"><div class="val">0.82</div><div class="lbl">Classifier ROC-AUC</div></div>
+            <div class="metric"><div class="val">+1.87</div><div class="lbl">A/B mean lift (txns), 95% CI 1.54–2.20</div></div>
+            <div class="metric"><div class="val">0.49</div><div class="lbl">Cohen's d (p &lt; 0.0001)</div></div>
+          </div>
+        </div>
+
+        <div class="chips">
+          <span class="chip">Python</span><span class="chip">pandas</span><span class="chip">scikit-learn</span><span class="chip">SciPy</span><span class="chip">SQL</span><span class="chip">SQLite</span><span class="chip">matplotlib</span><span class="chip">seaborn</span>
+        </div>
+
+        <div class="card-foot">
+          <a class="repo-link" href="https://github.com/jeylanimohamed/fintech-churn-analytics" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.9 18.3 5.2 18.3 5.2c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+            View repository
+          </a>
+        </div>
+      </article>
+
+      <!-- Healthcare -->
+      <article class="card">
+        <div class="card-head">
+          <h2>Healthcare Claims Analytics</h2>
+          <span class="kind">Analysis &amp; ML</span>
+        </div>
+        <p class="desc">A claims-style analytics workflow on synthetic relational data: how cost and admission utilisation vary by diagnosis, region and patient risk tier, and whether a model can classify a generated admission flag.</p>
+
+        <div class="block">
+          <h3>Approach</h3>
+          <p>Generated 5,000 patients, 200 providers and 25,000 claims; ran seven analytical SQL queries in SQLite; produced cost/utilisation summaries; and trained a Random Forest admission classifier with a <strong>patient-level</strong> train/test split, benchmarked against a logistic-regression baseline.</p>
+        </div>
+
+        <div class="block">
+          <h3>Key results (synthetic sample)</h3>
+          <div class="metrics">
+            <div class="metric"><div class="val">0.72</div><div class="lbl">ROC-AUC (RF &amp; LR baseline)</div></div>
+            <div class="metric"><div class="val">38.7%</div><div class="lbl">Admission-flag rate</div></div>
+            <div class="metric"><div class="val">$2.44M</div><div class="lbl">Total generated claims cost</div></div>
+          </div>
+        </div>
+
+        <div class="chips">
+          <span class="chip">Python</span><span class="chip">pandas</span><span class="chip">scikit-learn</span><span class="chip">SQL</span><span class="chip">SQLite</span><span class="chip">matplotlib</span><span class="chip">seaborn</span>
+        </div>
+
+        <div class="card-foot">
+          <a class="repo-link" href="https://github.com/jeylanimohamed/healthcare-claims-analytics" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.9 18.3 5.2 18.3 5.2c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+            View repository
+          </a>
+        </div>
+      </article>
+
+      <!-- Neobank -->
+      <article class="card">
+        <div class="card-head">
+          <h2>Neobank Analytics Engineering — ETL &amp; Metrics Layer</h2>
+          <span class="kind">Data Engineering</span>
+        </div>
+        <p class="desc">The layer underneath analysis: turning messy raw source data — mixed date formats, inconsistent country strings, duplicates, multi-currency amounts — into a clean, tested, star-schema warehouse that metrics can be trusted against.</p>
+
+        <div class="block">
+          <h3>Approach</h3>
+          <p>A staged <strong>extract → transform → load → data-quality → marts</strong> pipeline. Transform standardises dates and ISO-2 countries, dedupes, and converts amounts to EUR via an FX table; the load is idempotent (drop/recreate). A pytest suite enforces primary-key uniqueness, not-null, referential integrity and accepted-value checks, and exits non-zero on failure so it can gate CI.</p>
+        </div>
+
+        <div class="block">
+          <h3>Key results (synthetic sample)</h3>
+          <div class="metrics">
+            <div class="metric"><div class="val">6,000</div><div class="lbl">Deduped users from ~6,120 raw</div></div>
+            <div class="metric"><div class="val">~35,990</div><div class="lbl">Clean transactions from ~36,350 raw</div></div>
+            <div class="metric"><div class="val">100%</div><div class="lbl">Data-quality checks passing</div></div>
+          </div>
+        </div>
+
+        <div class="chips">
+          <span class="chip">Python</span><span class="chip">pandas</span><span class="chip">SQL</span><span class="chip">SQLite</span><span class="chip">pytest</span><span class="chip">star schema</span>
+        </div>
+
+        <div class="card-foot">
+          <a class="repo-link" href="https://github.com/jeylanimohamed/neobank-analytics-engineering" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.9 18.3 5.2 18.3 5.2c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+            View repository
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Mohamed Jeylani</span>
+    <span><a href="mailto:tinyjeylani1@gmail.com">tinyjeylani1@gmail.com</a> · <a href="https://github.com/jeylanimohamed" target="_blank" rel="noopener">github.com/jeylanimohamed</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
