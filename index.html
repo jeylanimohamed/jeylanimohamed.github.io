@@ -103,7 +103,7 @@
   <header>
     <div class="eyebrow">Portfolio</div>
     <h1>Mohamed Jeylani</h1>
-    <p class="lede">Data analytics &amp; analytics engineering — independent projects covering SQL analysis, statistical testing, machine learning, and tested ETL pipelines.</p>
+    <p class="lede">A few data projects I built on my own, covering SQL analysis, A/B testing, machine learning, and ETL pipelines.</p>
     <div class="contact">
       <a href="mailto:jeylanimohamed1@icloud.com">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
@@ -115,7 +115,7 @@
       </a>
     </div>
     <div class="note">
-      <strong>A note on the data.</strong> Every project below is built on <strong>fully synthetic data</strong> generated locally with fixed random seeds. No employer, customer, patient, or proprietary data is used. Reported metrics recover relationships intentionally encoded in the generators, so they demonstrate the analytical and engineering methods rather than real-world findings — a deliberate choice to keep the work reproducible and free of confidential data.
+      <strong>About the data.</strong> Everything here runs on synthetic data I generate locally with fixed seeds, so there's no employer, customer, or patient data anywhere in these projects. Because I wrote the generators, the numbers reflect patterns I built into the data on purpose. They show the methods working, not real-world findings. I did it this way so the projects stay reproducible and never touch anything confidential.
     </div>
   </header>
 
@@ -129,11 +129,11 @@
           <h2>Fintech Product Analytics — Churn &amp; A/B Testing</h2>
           <span class="kind">Analysis &amp; ML</span>
         </div>
-        <p class="desc">An end-to-end product-analytics workflow: which behavioural signals associate with an inactivity-based churn label, and does a simulated onboarding variant move 30-day transaction activity?</p>
+        <p class="desc">A product-analytics project looking at which behaviours line up with an inactivity-based churn label, and whether a simulated onboarding change shifts 30-day transaction activity.</p>
 
         <div class="block">
           <h3>Approach</h3>
-          <p>Generated 8,000 users and 60,000 transactions, ran business-style SQL analysis in SQLite, trained a Random Forest churn-label classifier, and ran a simulated A/B test with a Welch t-test, 95% confidence interval, Cohen's <em>d</em>, and a sample-ratio-mismatch check.</p>
+          <p>I generated 8,000 users and 60,000 transactions, ran the SQL analysis in SQLite, trained a Random Forest to classify the churn label, and ran a simulated A/B test with a Welch t-test, a 95% confidence interval, Cohen's <em>d</em>, and a sample-ratio-mismatch check.</p>
         </div>
 
         <div class="block">
@@ -163,11 +163,11 @@
           <h2>Healthcare Claims Analytics</h2>
           <span class="kind">Analysis &amp; ML</span>
         </div>
-        <p class="desc">A claims-style analytics workflow on synthetic relational data: how cost and admission utilisation vary by diagnosis, region and patient risk tier, and whether a model can classify a generated admission flag.</p>
+        <p class="desc">A claims-style project on synthetic data, looking at how cost and admissions vary by diagnosis, region and patient risk tier, and whether a model can pick out the admission flag.</p>
 
         <div class="block">
           <h3>Approach</h3>
-          <p>Generated 5,000 patients, 200 providers and 25,000 claims; ran seven analytical SQL queries in SQLite; produced cost/utilisation summaries; and trained a Random Forest admission classifier with a <strong>patient-level</strong> train/test split, benchmarked against a logistic-regression baseline.</p>
+          <p>I generated 5,000 patients, 200 providers and 25,000 claims, ran seven SQL queries in SQLite, pulled together cost and utilisation summaries, and trained a Random Forest to classify admissions using a <strong>patient-level</strong> train/test split, with a logistic-regression baseline for comparison.</p>
         </div>
 
         <div class="block">
